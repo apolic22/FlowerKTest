@@ -27,6 +27,7 @@ import { WorkoutHistoryComponent } from './workout-plan/workout-history/workout-
 import { FillExercisesComponent } from './workout-plan/fill-exercises/fill-exercises.component';
 import { MatExpansionModule, MatFormFieldModule, MatDatepickerModule, MatNativeDateModule, MatInputModule } from '@angular/material';
 import { SelectExercisesComponent } from './workout-plan/select-exercises/select-exercises.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { SelectExercisesComponent } from './workout-plan/select-exercises/select
     MatFormFieldModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatInputModule 
+    MatInputModule,
+    NgbModule.forRoot() 
   ],
   providers: [
     AuthGuard,
