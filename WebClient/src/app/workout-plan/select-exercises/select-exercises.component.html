@@ -1,0 +1,33 @@
+<mat-accordion>
+
+  <div *ngFor="let dg of dataGroups">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{dg.name}}
+
+          {{dg.exercise}}
+        </mat-panel-title>
+        <mat-panel-description>
+          Select one or more exercise
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 groupItemParent" *ngFor="let exercise of dg.exercises">
+            <div class="groupItem">
+              <input type="checkbox" name="{{dg.id}}" id="{{exercise.id}}" (change)="changeSelectedItem($event)" />
+              <label for="{{exercise.id}}"><img [src]="exercise.imagePath" alt="{{exercise.name}}"
+                  title="{{exercise.name}}" /></label>
+              <div class="padded-multiline">{{exercise.name}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </mat-expansion-panel>
+  </div>
+</mat-accordion>
+
+<button (click)="selectExercises()" id="btnSelectExercises">Select</button>
