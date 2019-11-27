@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 @Injectable()
 export class AuthenticationService {
     constructor(private http: HttpClient) { }
+// tslint:disable-next-line:max-line-length
 // apiUrl: 'http://localhost:5555'   => return this.http.post<any>(`${config.apiUrl}/users/authenticate`, { username: username, password: password })
     login(username: string, password: string) {
         return this.http.post<any>(`http://localhost:5555/users/authenticate`, { username: username, password: password })

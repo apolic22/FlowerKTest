@@ -6,7 +6,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './pages/home/home.component';
 import { RoutingModule } from './routing/routing.module';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
@@ -22,12 +22,14 @@ import { JwtInterceptor } from './_helpers/jwt.interceptor';
 import { ErrorInterceptor } from './_helpers/error.interceptor';
 import { fakeBackendProvider } from './_helpers/fake-backend.service';
 import { RegisterComponent } from './login/register/register.component';
-import { MakeAPlanComponent } from './workout-plan/make-aplan/make-aplan.component';
-import { WorkoutHistoryComponent } from './workout-plan/workout-history/workout-history.component';
-import { FillExercisesComponent } from './workout-plan/fill-exercises/fill-exercises.component';
 import { MatExpansionModule, MatFormFieldModule, MatDatepickerModule, MatNativeDateModule, MatInputModule } from '@angular/material';
-import { SelectExercisesComponent } from './workout-plan/select-exercises/select-exercises.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { AComponent } from './pages/a/a.component';
+import { CComponent } from './pages/c/c.component';
+import { BComponent } from './pages/b/b.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { GaleryComponent } from './pages/galery/galery.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -39,10 +41,13 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     AlertComponent,
     LoginComponent,
     RegisterComponent,
-    MakeAPlanComponent,
-    WorkoutHistoryComponent,
-    FillExercisesComponent,
-    SelectExercisesComponent,
+    AComponent,
+    BComponent,
+    CComponent,
+    HomeComponent,
+    AboutUsComponent,
+    GaleryComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +62,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     MatDatepickerModule,
     MatNativeDateModule,
     MatInputModule,
-    NgbModule.forRoot() 
+    NgbModule.forRoot()
   ],
   providers: [
     AuthGuard,

@@ -4,23 +4,23 @@
             <mat-icon>menu</mat-icon>
         </button>
     </div>
-    <div>
-        <a routerLink="/home">My Workout Plan</a>
+    <div id="homeName">
+        <a routerLink="/home">FlowerK</a>
     </div>
     <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
         <ul fxLayout fxLayoutGap="15px" class="navigation-items">
             <li>
-                <a routerLink="/makeAPlan">Make a Plan</a>
+                <a routerLink="/a">A</a>
             </li>
             <li>
-                <a routerLink="/workoutHistory">Workout History</a>
+                <a routerLink="/b">B</a>
             </li>
             <li>
-                <a routerLink="/fillExercises">Fill</a>
-            </li>
-            <li *ngIf="isAuthorized()">
+                <a routerLink="/c">C</a>
+            </li>            
+            <!-- <li *ngIf="isAuthorized()">
                 <a [routerLink]="['/login']">Logout</a>
-            </li>
+            </li> -->
         </ul>
     </div>
 </mat-toolbar>
