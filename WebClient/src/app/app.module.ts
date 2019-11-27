@@ -12,7 +12,7 @@ import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import { AlertComponent } from './_directives/alert/alert.component';
 import { LoginComponent } from './login/login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthGuard } from './_guards/auth.guard';
 import { AlertService } from './_services/alert.service';
@@ -62,7 +62,8 @@ import { ContactComponent } from './pages/contact/contact.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatInputModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    FormsModule
   ],
   providers: [
     AuthGuard,
