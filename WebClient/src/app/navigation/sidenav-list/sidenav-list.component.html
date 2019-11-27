@@ -3,17 +3,26 @@
     <mat-icon>home</mat-icon> <span class="nav-caption">NASLOVNICA</span>
   </a>
 
-  <mat-list-item [matMenuTriggerFor]="menu">
-    <mat-icon>unfold_more</mat-icon>
-    <a matline>KATALOZI</a>
-  </mat-list-item>
-  <mat-menu #menu="matMenu" >
-     <button mat-menu-item (click)="openA()">Valentinovo</button>
-     <button mat-menu-item (click)="openB()">Godišnjice</button> 
-     <button mat-menu-item (click)="openC()">Rođendani</button> 
-  </mat-menu>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        KATALOZI
+      </mat-panel-title>      
+    </mat-expansion-panel-header>
 
-  <a mat-list-item routerLink="/aboutUs" (click)="onSidenavClose()">
+      <a mat-list-item routerLink="/a" (click)="onSidenavClose()">
+        <mat-icon>assignment_ind</mat-icon> <span class="nav-caption">Valentinovo</span>
+      </a>
+      <a mat-list-item routerLink="/b" (click)="onSidenavClose()">
+        <mat-icon>assignment_ind</mat-icon> <span class="nav-caption">Godišnjice</span>
+      </a>
+      <a mat-list-item routerLink="/c" (click)="onSidenavClose()">
+        <mat-icon>assignment_ind</mat-icon> <span class="nav-caption">Rođendani</span>
+      </a>
+
+  </mat-expansion-panel>
+
+   <a mat-list-item routerLink="/aboutUs" (click)="onSidenavClose()">
     <mat-icon>assignment_ind</mat-icon> <span class="nav-caption">O NAMA</span>
   </a>
   <a mat-list-item routerLink="/gallery" (click)="onSidenavClose()">

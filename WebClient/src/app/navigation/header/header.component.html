@@ -9,15 +9,28 @@
     </div>
     <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
         <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+           
             <li>
-                <a routerLink="/a">A</a>
+                <button mat-button [matMenuTriggerFor]="menu">KATALOZI</button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item routerLink="/a">Valentinovo</button>
+                    <button mat-menu-item routerLink="/b">Godišnjice</button>
+                    <button mat-menu-item routerLink="/c">Rođendani</button>
+                </mat-menu>
             </li>
+            
             <li>
-                <a routerLink="/b">B</a>
+                <button mat-button routerLink="/a">A</button>
             </li>
+
             <li>
-                <a routerLink="/c">C</a>
-            </li>            
+                <button mat-button routerLink="/b">B</button>
+            </li>
+
+            <li>
+                <button mat-button routerLink="/c">C</button>
+            </li>
+                    
             <!-- <li *ngIf="isAuthorized()">
                 <a [routerLink]="['/login']">Logout</a>
             </li> -->
