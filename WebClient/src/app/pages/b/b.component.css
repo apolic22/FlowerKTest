@@ -17,8 +17,10 @@
   .gallery-block.compact-gallery .item{
     overflow: hidden;
     margin-bottom: 0;
-    background: black;
+    /* background: black; */
+    background: transparent;
     opacity: 1;
+    padding: 5px;
   }
   
   .gallery-block.compact-gallery .item .image{
