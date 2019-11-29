@@ -5,7 +5,6 @@ import { MaterialModule } from './material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
-import { LayoutComponent } from './layout/layout.component';
 import { HomeComponent } from './pages/home/home.component';
 import { RoutingModule } from './routing/routing.module';
 import { HeaderComponent } from './navigation/header/header.component';
@@ -30,11 +29,11 @@ import { BComponent } from './pages/b/b.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { GaleryComponent } from './pages/galery/galery.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LayoutComponent,
     HomeComponent,
     HeaderComponent,
     SidenavListComponent,
@@ -47,7 +46,8 @@ import { ContactComponent } from './pages/contact/contact.component';
     HomeComponent,
     AboutUsComponent,
     GaleryComponent,
-    ContactComponent
+    ContactComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,

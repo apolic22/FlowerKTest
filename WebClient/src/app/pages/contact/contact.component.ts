@@ -38,10 +38,6 @@ export class ContactComponent implements OnInit {
 
   ngOnInit() {
 
-  }
-
-  // tslint:disable-next-line:use-life-cycle-interface
-  ngAfterContentInit() {
     const mapProp = {
       center: new google.maps.LatLng(43.537105, 16.489360),
       zoom: 15,
@@ -49,13 +45,27 @@ export class ContactComponent implements OnInit {
     };
     this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
 
+    this.latitude = 43.537105;
+    this.longitude = 16.489360;
+    this.setMyCenter();
+  }
+
+  // tslint:disable-next-line:use-life-cycle-interface
+  ngAfterContentInit() {
+    // const mapProp = {
+    //   center: new google.maps.LatLng(43.537105, 16.489360),
+    //   zoom: 15,
+    //   mapTypeId: google.maps.MapTypeId.ROADMAP
+    // };
+    // this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
+
   }
 
   setMapType(mapTypeId: string) {
     this.map.setMapTypeId(mapTypeId);
   }
 
-  setCenter() {
+  setMyCenter() {
     this.map.setCenter(new google.maps.LatLng(this.latitude, this.longitude));
 
     const location = new google.maps.LatLng(this.latitude, this.longitude);
@@ -63,7 +73,7 @@ export class ContactComponent implements OnInit {
     const marker = new google.maps.Marker({
       position: location,
       map: this.map,
-      title: 'Got you!'
+      title: 'FlowerK',
     });
 
     marker.addListener('click', this.simpleMarkerHandler);
@@ -74,15 +84,14 @@ export class ContactComponent implements OnInit {
   }
 
   simpleMarkerHandler() {
-    alert('Simple Component\'s function...');
+    // alert('Simple Component\'s function...');
   }
 
   markerHandler(marker: google.maps.Marker) {
-    alert('Marker\'s Title: ' + marker.getTitle());
+    // alert('Marker\'s Title: ' + marker.getTitle());
   }
 
   showCustomMarker() {
-
 
     this.map.setCenter(new google.maps.LatLng(this.latitude, this.longitude));
 
