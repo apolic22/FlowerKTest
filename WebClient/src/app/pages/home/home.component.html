@@ -8,45 +8,29 @@
     </li>
 </ul> -->
 
-<!-- <div class="container">
-    <div class="row">
-      <div class="col-md-12 py-3">
-        <h2 class="pb-2">Upcoming Events</h2>
-        <ngb-carousel *ngIf="event_list">
-          <ng-template ngbSlide *ngFor="let event of upcoming_events">
-            <img [src]="event.img" alt="Random slide">
-            <div class="carousel-caption">
-              <h3>{{ event.eventLocation }}</h3>
-              <p [innerText]="event.eventDescription"></p>
-            </div>
-          </ng-template>
-        </ngb-carousel>
+
+  <div (window:resize)="onResize($event)">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 py-3">
+          <ngb-carousel *ngIf="event_list">
+            <ng-template ngbSlide *ngFor="let event of event_list">
+              <img [src]="event.img" alt="Random slide">
+              <div class="carousel-caption">
+                <h3>{{ event.eventLocation }}</h3>
+                <p [innerText]="event.eventDescription"></p>
+              </div>
+            </ng-template>
+          </ngb-carousel>
+        </div>
       </div>
-    </div>
-  </div> -->
-  
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 py-3">
-        <h2 class="pb-2">Current Events</h2>
-        <ngb-carousel *ngIf="event_list">
-          <ng-template ngbSlide *ngFor="let event of event_list">
-            <img [src]="event.img" alt="Random slide">
-            <div class="carousel-caption">
-              <h3>{{ event.eventLocation }}</h3>
-              <p [innerText]="event.eventDescription"></p>
-            </div>
-          </ng-template>
-        </ngb-carousel>
-      </div>
-    </div>
   </div>
  
    
   <section class="gallery-block compact-gallery">
     <div class="container">
         <div class="heading">
-            <h2>Compact Gallery</h2>
+            <h4 style="color: #007bff;">Compact Gallery</h4>
         </div>
   
         <div class="row no-gutters">
@@ -54,9 +38,13 @@
               <a class="lightbox">
               <img class="img-fluid image" [src]="image.src" style="border-radius: 5px;">
               <span class="description" *ngIf="!mobile">
-              <span class="description-heading" >{{image.title}}</span>
-                  <span class="description-body">{{image.description}}</span>
-                  </span>
+                <span class="description-heading" >{{image.title}}</span>
+                <span class="description-body">{{image.description}}</span>
+              </span>
+              <div class="card-body" *ngIf="mobile">
+                <p style="color: #007bff; font-size: 16px;margin-top: -20px;">Lorem Ipsum</p>
+                <p style="color: white; font-size: 8px; margin-top: -30px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.</p>
+              </div>
               </a>
           </div>
         
@@ -81,3 +69,5 @@
       </div>
     </div>
   </div>
+
+</div>

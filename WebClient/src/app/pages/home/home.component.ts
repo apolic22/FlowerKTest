@@ -147,6 +147,18 @@ export class HomeComponent implements OnInit {
         }
     }
 
+    onResize(event) {
+
+      const innerWidth = event.target.innerWidth;
+      console.log(innerWidth);
+
+      if (innerWidth < 420) {
+         this.mobile = true;
+      } else {
+         this.mobile = false;
+      }
+   }
+
     deleteUser(id: number) {
         this.userService.delete(id).pipe(first()).subscribe(() => {
             this.loadAllUsers();
