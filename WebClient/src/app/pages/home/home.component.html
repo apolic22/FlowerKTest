@@ -1,25 +1,15 @@
-<!-- <h1>Hi {{currentUser.firstName}}!</h1>
-<p>You're logged in with Angular 6!!</p>
-<h3>All registered users:</h3>
-<ul>
-    <li *ngFor="let user of users">
-        {{user.username}} ({{user.firstName}} {{user.lastName}})
-        - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
-    </li>
-</ul> -->
-
 
   <div (window:resize)="onResize($event)">
     <div class="container">
       <div class="row">
-        <div class="col-md-12 py-3">
+        <div class="col-md-12 col-12 py-3">
           <ngb-carousel *ngIf="event_list">
             <ng-template ngbSlide *ngFor="let event of event_list">
-              <img [src]="event.img" alt="Random slide">
-              <div class="carousel-caption">
+              <img [src]="event.img" alt="Random slide" style="display: block; margin: 0 auto;">
+              <!-- <div class="carousel-caption">
                 <h3>{{ event.eventLocation }}</h3>
                 <p [innerText]="event.eventDescription"></p>
-              </div>
+              </div> -->
             </ng-template>
           </ngb-carousel>
         </div>
@@ -30,33 +20,101 @@
   <section class="gallery-block compact-gallery">
     <div class="container">
         <div class="heading">
-            <h4 style="color: #007bff;">Compact Gallery</h4>
+            <h4 style="color: #007bff;">Second Part</h4>
         </div>
-  
-        <div class="row no-gutters">
-          <div class="col-md-6 col-lg-3 col-6 item zoom-on-hover card border-0" *ngFor="let image of images">
-              <a class="lightbox">
-              <img class="img-fluid image" [src]="image.src" style="border-radius: 5px;">
-              <span class="description" *ngIf="!mobile">
-                <span class="description-heading" >{{image.title}}</span>
-                <span class="description-body">{{image.description}}</span>
-              </span>
-              <div class="card-body" *ngIf="mobile">
-                <p style="color: #007bff; font-size: 16px;margin-top: -20px;">Lorem Ipsum</p>
-                <p style="color: white; font-size: 8px; margin-top: -30px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.</p>
-              </div>
-              </a>
-          </div>
         
-        </div>
+          <div *ngIf="!mobile">
+              <div class="row no-gutters">
+                  <div class="col-md-6 col-lg-3 col-6 item zoom-on-hover card border-0" *ngFor="let image of images">
+                      <a class="lightbox">
+                      <img class="img-fluid image" [src]="image.src" style="border-radius: 5px;">
+                      <!-- <span class="description" *ngIf="!mobile"> -->
+                      <span class="description">
+                        <span class="description-heading" >{{image.title}}</span>
+                        <span class="description-body">{{image.description}}</span>
+                      </span>
+                      </a>
+                  </div>                
+                </div>
+          </div>
+
+          <div *ngIf="mobile">
+              <div class="container">
+                  <div class="row">
+                    <div class="col-md-12 py-3">
+                      <ngb-carousel>
+                        <ng-template ngbSlide *ngFor="let image of images">
+                            <a class="lightbox">
+                                <img class="img-fluid image" [src]="image.src" style="border-radius: 5px;">
+                                <div class="card-body" *ngIf="mobile">
+                                  <p style="color: #007bff; font-size: 16px;margin-top: -20px;">{{image.title}}</p>
+                                  <p style="color: white; font-size: 8px; margin-top: -30px;">{{image.description}}</p>
+                                </div> 
+                            </a>
+                        </ng-template>
+                      </ngb-carousel>
+                    </div>
+                  </div>
+              </div>
+
+          </div>
+          
     </div>
   </section>
 
 
-  <div class="container">
+  <section class="gallery-block compact-gallery">
+      <div class="container">
+          <div class="heading">
+              <h4 style="color: #007bff;">Third Part</h4>
+          </div>
+          
+            <div *ngIf="!mobile">
+                <div class="row no-gutters">
+                    <div class="col-md-6 col-lg-3 col-6 item zoom-on-hover card border-0" *ngFor="let image of images">
+                        <a class="lightbox">
+                        <img class="img-fluid image" [src]="image.src" style="border-radius: 5px;">
+                        <!-- <span class="description" *ngIf="!mobile"> -->
+                        <span class="description">
+                          <span class="description-heading" >{{image.title}}</span>
+                          <span class="description-body">{{image.description}}</span>
+                        </span>
+                        </a>
+                    </div>                
+                  </div>
+            </div>
+  
+            <div *ngIf="mobile">
+                <div class="container">
+                    <div class="row">
+                      <div class="col-md-12 py-3">
+                        <ngb-carousel>
+                          <ng-template ngbSlide *ngFor="let image of images">
+                              <a class="lightbox">
+                                  <img class="img-fluid image" [src]="image.src" style="border-radius: 5px;">
+                                  <div class="card-body" *ngIf="mobile">
+                                    <p style="color: #007bff; font-size: 16px;margin-top: -20px;">{{image.title}}</p>
+                                    <p style="color: white; font-size: 8px; margin-top: -30px;">{{image.description}}</p>
+                                  </div> 
+                              </a>
+                          </ng-template>
+                        </ngb-carousel>
+                      </div>
+                    </div>
+                </div>
+  
+            </div>
+            
+      </div>
+    </section>
+
+
+  <!-- <div class="container">
     <div class="row">
       <div class="col-md-12 py-3">
-        <h2 class="pb-2">Past Events</h2>
+          <div class="heading">
+              <h4 style="color: #007bff;">Third Part</h4>
+          </div>
         <ngb-carousel *ngIf="event_list">
           <ng-template ngbSlide *ngFor="let event of event_list">
             <img [src]="event.img" alt="Random slide">
@@ -68,6 +126,6 @@
         </ngb-carousel>
       </div>
     </div>
-  </div>
+  </div> -->
 
 </div>
