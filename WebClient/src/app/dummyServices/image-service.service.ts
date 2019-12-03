@@ -54,13 +54,6 @@ export class ImageServiceService {
       // tslint:disable-next-line:max-line-length
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
-    {
-      src: 'assets/img/image9.jpg',
-      title: 'Lorem Ipsum',
-      // tslint:disable-next-line:max-line-length
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    },
-
   ];
 
 

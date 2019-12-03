@@ -1,21 +1,21 @@
-<mat-toolbar color="primary">
+<mat-toolbar style="background-color: black;">
     <div fxHide.gt-xs>
         <button mat-icon-button (click)="onToggleSidenav()">
-            <mat-icon>menu</mat-icon>
+            <mat-icon style="color: white;"> menu</mat-icon>
         </button>
     </div>
     <div id="homeName">
         <a routerLink="/home" style="color: white;">FlowerK</a>
     </div>
-    <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+    <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs style="color: white">
         <ul fxLayout fxLayoutGap="15px" class="navigation-items">
            
             <li>
                 <button mat-button [matMenuTriggerFor]="menu">KATALOZI</button>
                 <mat-menu #menu="matMenu">
-                    <button mat-menu-item routerLink="/a">Valentinovo</button>
-                    <button mat-menu-item routerLink="/b">Godišnjice</button>
-                    <button mat-menu-item routerLink="/c">Rođendani</button>
+                    <button mat-menu-item routerLink="/valentinesday">Valentinovo</button>
+                    <button mat-menu-item routerLink="/anniversary">Godišnjice</button>
+                    <button mat-menu-item routerLink="/birthdays">Rođendani</button>
                 </mat-menu>
             </li>
             

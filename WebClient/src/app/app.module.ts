@@ -30,6 +30,9 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { GaleryComponent } from './pages/galery/galery.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { LayoutComponent } from './layout/layout.component';
+import { BirthdaysComponent } from './pages/catalogs/birthdays/birthdays.component';
+import { AnniversaryComponent } from './pages/catalogs/anniversary/anniversary.component';
+import { ValentinesdayComponent } from './pages/catalogs/valentinesday/valentinesday.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +50,10 @@ import { LayoutComponent } from './layout/layout.component';
     AboutUsComponent,
     GaleryComponent,
     ContactComponent,
-    LayoutComponent
+    LayoutComponent,
+    BirthdaysComponent,
+    AnniversaryComponent,
+    ValentinesdayComponent
   ],
   imports: [
     BrowserModule,

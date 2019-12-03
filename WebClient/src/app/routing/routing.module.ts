@@ -1,3 +1,6 @@
+import { AnniversaryComponent } from './../pages/catalogs/anniversary/anniversary.component';
+import { ValentinesdayComponent } from './../pages/catalogs/valentinesday/valentinesday.component';
+import { BirthdaysComponent } from './../pages/catalogs/birthdays/birthdays.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
@@ -25,6 +28,9 @@ const routes: Routes = [
   { path: 'a', component: AComponent },
   { path: 'b', component: BComponent },
   { path: 'c', component: CComponent },
+  { path: 'birthdays', component: BirthdaysComponent },
+  { path: 'valentinesday', component: ValentinesdayComponent },
+  { path: 'anniversary', component: AnniversaryComponent },
 
   // otherwise redirect to home
   { path: '**', redirectTo: '' }
