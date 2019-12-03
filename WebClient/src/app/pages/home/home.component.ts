@@ -11,7 +11,7 @@ import { UserService } from '../../_services/user.service';
 export class HomeComponent implements OnInit {
     currentUser: User;
     users: User[] = [];
-    mobile = false;
+    notMobile = true;
 
     constructor(private userService: UserService) {
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -72,7 +72,7 @@ export class HomeComponent implements OnInit {
         // tslint:disable-next-line:max-line-length
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       },
-
+      
     ];
 
     event_list = [
@@ -142,10 +142,22 @@ export class HomeComponent implements OnInit {
     ngOnInit() {
         this.loadAllUsers();
 
-        if (window.screen.width < 420) { // 768px portrait
-          this.mobile = true;
+        if (window.screen.width > 420) { // 768px portrait
+          this.notMobile = true;
         }
     }
+
+    onResize(event) {
+
+      const innerWidth = event.target.innerWidth;
+   
+      if (innerWidth <= 420) {
+         alert('MOBILE');
+      }
+      else{
+        alert('not mobile');
+      }
+   }
 
     deleteUser(id: number) {
         this.userService.delete(id).pipe(first()).subscribe(() => {
