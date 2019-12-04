@@ -22,3 +22,14 @@ main {
 
     color: rgba(0,0,0,.87);
 }
+
+#footer {
+    text-align: center;
+    position: relative;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    /* background-color: #efefef; */
+    text-align: center;
+}
