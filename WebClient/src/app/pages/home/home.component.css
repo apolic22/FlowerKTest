@@ -21,16 +21,16 @@ mat-tab-group p {
 }
 
 
-
+/*  CAROUSEL  */
 
 
 .gallery-block{
-    padding-bottom: 60px;
-    padding-top: 60px;
+    padding-bottom: 10px;
+    padding-top: 10px;
   }
   
   .gallery-block .heading{
-      margin-bottom: 50px;
+      margin-bottom: 15px;
       text-align: center;
   }
   
@@ -104,4 +104,54 @@ mat-tab-group p {
       opacity: 0.7; 
     }
   }
+
+  .carousel-item, .ng-star-inserted{
+    outline: none !important;
+  }
+
+  .carousel.slide{
+    outline: none !important;
+  }
+
+  .card-body{
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .card-body p{
+    padding: 0 !important; 
+    margin: 0 !important;  
+  }
+ 
+
+
+ 
   
+  .fancy {
+    line-height: 0.5;
+    text-align: center;
+  }
+  .fancy span {
+    display: inline-block;
+    position: relative;  
+  }
+  .fancy span:before,
+  .fancy span:after {
+    content: "";
+    position: absolute;
+    height: 5px;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    top: 0;
+    /* width: 600px; */
+    width: 30%;
+  }
+  .fancy span:before {
+    right: 100%;
+    margin-right: 15px;
+  }
+  .fancy span:after {
+    left: 100%;
+    margin-left: 15px;
+  }
