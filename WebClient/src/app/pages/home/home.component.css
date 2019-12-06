@@ -125,9 +125,23 @@ mat-tab-group p {
   }
  
 
-
+  .myfancy {margin-top:50px;
+    display:flex;
+    background:linear-gradient(to left,gray,lightgray,white,yellow,turquoise);
+    color: #007bff !important;
+  }
+  .myfancy:before, .myfancy:after {
+    color:white;
+    content:'';
+    flex:1;
+    border-bottom:groove 2px;
+    margin:auto 0.25em;
+    box-shadow: 0 -1px ;/* ou 0 1px si border-style:ridge */
+  }
  
   
+
+
   .fancy {
     line-height: 0.5;
     text-align: center;
@@ -145,7 +159,7 @@ mat-tab-group p {
     border-top: 1px solid white;
     top: 0;
     /* width: 600px; */
-    width: 30%;
+    width: 40%;
   }
   .fancy span:before {
     right: 100%;
