@@ -5,7 +5,8 @@
         <div class="col-md-12 col-12 py-3">
           <ngb-carousel *ngIf="homeImages">
             <ng-template ngbSlide *ngFor="let himg of homeImages">
-              <img [src]="himg.img" alt="Random slide" style="display: block; margin: 0 auto; max-width: 100%;">              
+              <img  *ngIf="mobile" [src]="himg.img" alt="Random slide" style="display: block; margin: 0 auto; max-width: 100%;">              
+              <img  *ngIf="!mobile" [src]="himg.img" alt="Random slide" style="display: block; margin: 0 auto; max-width: 500px; max-height: 500px;">              
             </ng-template>
           </ngb-carousel>
         </div>

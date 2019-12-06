@@ -52,9 +52,7 @@ export class HomeComponent implements OnInit {
     }
 
     onResize(event) {
-
       const innerWidth = event.target.innerWidth;
-      console.log(innerWidth);
 
       if (innerWidth < 420) {
          this.mobile = true;
