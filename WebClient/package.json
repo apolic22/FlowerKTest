@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot -prod"
+    "heroku-postbuild": "ng build --prod"
   },
   "engines": {
     "node": "10.15.1",
@@ -35,14 +35,13 @@
     "core-js": "^2.5.4",
     "express": "^4.17.1",
     "hammerjs": "^2.0.8",
-    "npm": "^6.9.2",
     "path": "^0.12.7",
     "rxjs": "^6.0.0",
     "typescript": "~2.7.2",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.10.0",
+    "@angular-devkit/build-angular": "^0.803.20",
     "@angular/cli": "^8.3.20",
     "@angular/compiler-cli": "^6.1.10",
     "@angular/language-service": "^6.1.0",
