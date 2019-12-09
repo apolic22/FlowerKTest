@@ -9,3 +9,27 @@ mat-sidenav {
 main {
     padding: 10px;
 }
+
+
+.mat-toolbar.mat-primary {
+    background:yellow !important;
+    color: #fff;
+}
+
+.mat-drawer-container {
+    /* background-color: #fafafa; */
+    background-color: black;
+
+    color: rgba(0,0,0,.87);
+}
+
+#footer {
+    text-align: center;
+    position: relative;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    /* background-color: #efefef; */
+    text-align: center;
+}

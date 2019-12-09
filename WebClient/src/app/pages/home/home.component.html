@@ -1,17 +1,107 @@
-<p>
-  home works!
-</p>
 
-<!-- 
-<ngb-carousel #carousel interval="1000" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)">
-  <ng-template ngbSlide *ngFor="let img of images; index as i">
-    <div class="carousel-caption">
-      <h3>My slide {{i + 1}} title</h3>
-    </div>
-    <a href="https://www.google.fr/?q=Number+{{i+1}}" target="_blank" rel="nofollow noopener noreferrer">
-      <div class="picsum-img-wrapper">
-        <img [src]="img" alt="My image {{i + 1}} description">
+  <div (window:resize)="onResize($event)">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-12 py-3">
+          <ngb-carousel *ngIf="homeImages">
+            <ng-template ngbSlide *ngFor="let himg of homeImages">
+              <img  *ngIf="mobile" [src]="himg.img" alt="Random slide" style="display: block; margin: 0 auto; max-width: 100%;">              
+              <img  *ngIf="!mobile" [src]="himg.img" alt="Random slide" style="display: block; margin: 0 auto; max-width: 500px; max-height: 500px;">              
+            </ng-template>
+          </ngb-carousel>
+        </div>
       </div>
-    </a>
-  </ng-template>
-</ngb-carousel> -->
+  </div>
+ 
+
+  <section class="gallery-block compact-gallery">
+    <div class="container">
+      <br>
+          <p class="myfancy">TOP PROIZVODI</p>
+     
+          <div *ngIf="!mobile">
+            <br>
+              <div class="row no-gutters">
+                  <div class="col-md-6 col-lg-3 col-6 item zoom-on-hover card border-0" *ngFor="let image of images">
+                      <a class="lightbox">
+                      <img class="img-fluid image" [src]="image.src" style="border-radius: 5px;">
+                      <span class="description">
+                        <span class="description-heading" >{{image.title}}</span>
+                        <span class="description-body">{{image.description}}</span>
+                      </span>
+                      </a>
+                  </div>                
+                </div>
+          </div>
+
+          <div *ngIf="mobile">
+              <div class="container">
+                  <div class="row">
+                    <div class="col-md-12 py-3">
+                      <ngb-carousel>
+                        <ng-template ngbSlide *ngFor="let image of images">
+                            <a class="lightbox">
+                                <img class="img-fluid image" [src]="image.src" style="border-radius: 5px;">
+                                <div class="card-body">
+                                  <p style="color: #007bff; font-size: 16px;">{{image.title}}</p>
+                                  <p style="color: white; font-size: 8px;">{{image.description}}</p>
+                                </div> 
+                            </a>
+                        </ng-template>
+                      </ngb-carousel>
+                    </div>
+                  </div>
+              </div>
+
+          </div>
+          
+    </div>
+  </section>
+
+   
+  <section class="gallery-block compact-gallery">
+    <div class="container">
+      <br>
+          <p class="myfancy">KATALOZI</p>
+        
+          <div *ngIf="!mobile">
+              <br>
+              <div class="row no-gutters">
+                  <div class="col-md-6 col-lg-3 col-6 item zoom-on-hover card border-0" *ngFor="let catalog of catalogs">
+                      <a class="lightbox" (click)="changeRoute(catalog.path)">
+                      <img class="img-fluid image" [src]="catalog.src" style="border-radius: 5px;">
+                      <span class="description">
+                        <span class="description-heading" >{{catalog.title}}</span>
+                        <span class="description-body">{{catalog.description}}</span>
+                      </span>
+                      </a>
+                  </div>                
+                </div>
+          </div>
+
+          <div *ngIf="mobile">
+              <div class="container">
+                  <div class="row">
+                    <div class="col-md-12 py-3">
+                      <ngb-carousel>
+                        <ng-template ngbSlide *ngFor="let catalog of catalogs">
+                            <a class="lightbox" (click)="changeRoute(catalog.path)">
+                                <img class="img-fluid image" [src]="catalog.src" style="border-radius: 5px;">
+                                <div class="card-body">
+                                  <p style="color: #007bff; font-size: 16px;">{{catalog.title}}</p>
+                                  <p style="color: white; font-size: 8px;">{{catalog.description}}</p>
+                                </div> 
+                            </a>
+                        </ng-template>
+                      </ngb-carousel>
+                    </div>
+                  </div>
+              </div>
+
+          </div>
+          
+    </div>
+  </section>
+
+ 
+</div>

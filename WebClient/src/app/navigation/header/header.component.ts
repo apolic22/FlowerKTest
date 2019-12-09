@@ -18,4 +18,12 @@ export class HeaderComponent implements OnInit {
     this.sidenavToggle.emit();
   }
 
+  public isAuthorized = () => {
+    let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    if (currentUser) {
+      return true;
+    }
+    return false;
+  }
+
 }

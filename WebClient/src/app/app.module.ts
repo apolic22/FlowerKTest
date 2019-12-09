@@ -1,59 +1,87 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { RoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AComponent } from './pages/a/a.component';
-import { BComponent } from './pages/b/b.component';
-import { CComponent } from './pages/c/c.component';
-
-
-// tslint:disable-next-line:max-line-length
-import { MatTabsModule, MatSidenavModule, MatToolbarModule, MatIconModule, MatButtonModule, MatListModule, MatMenuModule } from '@angular/material';
-import { CommonModule } from '@angular/common';
+import { HomeComponent } from './pages/home/home.component';
+import { RoutingModule } from './routing/routing.module';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
-import { LayoutComponent } from './layout/layout/layout.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeComponent } from './pages/home/home.component';
-// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { AlertComponent } from './_directives/alert/alert.component';
+import { LoginComponent } from './login/login/login.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthGuard } from './_guards/auth.guard';
+import { AlertService } from './_services/alert.service';
+import { AuthenticationService } from './_services/authentication.service';
+import { UserService } from './_services/user.service';
+import { JwtInterceptor } from './_helpers/jwt.interceptor';
+import { ErrorInterceptor } from './_helpers/error.interceptor';
+import { fakeBackendProvider } from './_helpers/fake-backend.service';
+import { RegisterComponent } from './login/register/register.component';
+import { MatExpansionModule, MatFormFieldModule, MatDatepickerModule, MatNativeDateModule, MatInputModule } from '@angular/material';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { AComponent } from './pages/a/a.component';
+import { CComponent } from './pages/c/c.component';
+import { BComponent } from './pages/b/b.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { GaleryComponent } from './pages/galery/galery.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { LayoutComponent } from './layout/layout.component';
+import { BirthdaysComponent } from './pages/catalogs/birthdays/birthdays.component';
+import { AnniversaryComponent } from './pages/catalogs/anniversary/anniversary.component';
+import { ValentinesdayComponent } from './pages/catalogs/valentinesday/valentinesday.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
+    HeaderComponent,
+    SidenavListComponent,
+    AlertComponent,
+    LoginComponent,
+    RegisterComponent,
     AComponent,
     BComponent,
     CComponent,
-    HeaderComponent,
-    SidenavListComponent,
+    HomeComponent,
+    AboutUsComponent,
+    GaleryComponent,
+    ContactComponent,
     LayoutComponent,
-    HomeComponent
+    BirthdaysComponent,
+    AnniversaryComponent,
+    ValentinesdayComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    MaterialModule,
+    FlexLayoutModule,
     RoutingModule,
-    MatMenuModule,
-    MatListModule,
-    MatButtonModule,
-    MatIconModule,
-    MatToolbarModule,
-    CommonModule,
-    MatTabsModule,
-    MatSidenavModule,
-    // NgbModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule,
+    NgbModule.forRoot(),
+    FormsModule
   ],
-  exports: [
-    MatMenuModule,
-    MatListModule,
-    MatButtonModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatTabsModule,
-    MatSidenavModule
+  providers: [
+    AuthGuard,
+    AlertService,
+    AuthenticationService,
+    UserService,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+
+    // provider used to create fake backend
+    // fakeBackendProvider
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,26 +1,51 @@
-<mat-toolbar color="primary">
-  <div fxHide.gt-xs>
-      <button mat-icon-button (click)="onToggleSidenav()">
-          <mat-icon>menu</mat-icon>
-      </button>
-  </div>
-  <div>
-      <a routerLink="/home">My Workout Plan</a>
-  </div>
-  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
-      <ul fxLayout fxLayoutGap="15px" class="navigation-items">
-          <li>
-              <a routerLink="/a">Make a Plan</a>
-          </li>
-          <li>
-              <a routerLink="/b">Workout History</a>
-          </li>
-          <li>
-              <a routerLink="/c">Fill</a>
-          </li>
-          <!-- <li *ngIf="isAuthorized()">
-              <a [routerLink]="['/login']">Logout</a>
-          </li> -->
-      </ul>
-  </div>
+<mat-toolbar style="background-color: black;">
+    <div fxHide.gt-xs>
+        <button mat-icon-button (click)="onToggleSidenav()">
+            <mat-icon style="color: white;"> menu</mat-icon>
+        </button>
+    </div>
+    <div id="homeName">
+        <a routerLink="/home" style="font-size: 60px; padding-left:25px;color: white;">𝕱𝖑𝖔𝖜𝖊𝖗𝕶</a>
+    </div>
+    <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs style="color: white">
+        <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+           
+            <li>
+                <button mat-button [matMenuTriggerFor]="menu">KATALOZI</button>                
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item routerLink="/valentinesday">Valentinovo</button>
+                    <button mat-menu-item routerLink="/anniversary">Godišnjice</button>
+                    <button mat-menu-item routerLink="/birthdays">Rođendani</button>
+                </mat-menu>
+            </li>
+            
+            <li>
+                <button mat-button routerLink="/aboutUs">O NAMA</button>
+            </li>
+
+            <li>
+                <button mat-button routerLink="/gallery">GALERIJA</button>
+            </li>
+
+            <li>
+                <button mat-button routerLink="/contact">KONTAKT</button>
+            </li>
+
+            <li>
+                <button mat-button routerLink="/a">A</button>
+            </li>
+
+            <li>
+                <button mat-button routerLink="/b">B</button>
+            </li>
+
+            <li>
+                <button mat-button routerLink="/c">C</button>
+            </li>
+                    
+            <!-- <li *ngIf="isAuthorized()">
+                <a [routerLink]="['/login']">Logout</a>
+            </li> -->
+        </ul>
+    </div>
 </mat-toolbar>
